@@ -8,42 +8,52 @@
     android:background="#FFF8DC"
     tools:context=".PlayingFieldActivity">
 
-    <com.google.android.flexbox.FlexboxLayout
-        android:id="@+id/consonants_flexbox_layout.field"
-        android:layout_width="388dp"
-        android:layout_height="291dp"
-        android:layout_marginTop="4dp"
-        app:alignContent="stretch"
-        app:alignItems="stretch"
-        app:flexWrap="wrap"
+    <TableLayout
+        android:id="@+id/consonants_table_layout"
+        android:layout_width="397dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass"></com.google.android.flexbox.FlexboxLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.flexbox.FlexboxLayout
-        android:id="@+id/vowels_flexbox_layout.field"
-        android:layout_width="389dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        app:alignContent="stretch"
-        app:alignItems="stretch"
-        app:flexWrap="wrap"
+    <TableLayout
+        android:id="@+id/vowels_table_layout"
+        android:layout_width="303dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/consonants_flexbox_layout.field"
-        tools:ignore="MissingClass"></com.google.android.flexbox.FlexboxLayout>
+        app:layout_constraintTop_toBottomOf="@+id/consonants_table_layout" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="345dp"
-        android:layout_height="76dp"
+        android:id="@+id/words_editText"
+        android:layout_width="265dp"
+        android:layout_height="49dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="280dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vowels_flexbox_layout.field" />
+        app:layout_constraintTop_toTopOf="@+id/consonants_table_layout" />
 
+    <Button
+        android:id="@+id/enter_words_button"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="280dp"
+        android:text="@string/enter_edittext"
+        app:layout_constraintStart_toEndOf="@+id/words_editText"
+        app:layout_constraintTop_toTopOf="@+id/consonants_table_layout" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="231dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/words_editText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

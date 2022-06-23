@@ -7,4 +7,5 @@
     <string name="label_consonants">The number of consonants:</string>
     <string name="seek_bar_description">Seek bar for the number of consonants</string>
     <string name="label_vowels">The number of vowels:</string>
+    <string name="enter_edittext">ENTER</string>
 </resources>
