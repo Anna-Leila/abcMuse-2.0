@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">abcMuse</string>
+    <string name="app_name">abcMuse 2.0</string>
     <string name="rules_button">Rules</string>
     <string name="play_button">Let\'s play!</string>
     <string name="greeting_text">Welcome to mini game abcMuse!</string>
-    <string name="rules_text">The program will randomly show several different consonants. You have to think of as many words with different available letters as you can. Each available letter used for the first time will give You + 1 to the score. Afterwards it’ll give You -1 to the score. Try to get highest score possible. Good luck!</string>
     <string name="label_consonants">The number of consonants:</string>
     <string name="seek_bar_description">Seek bar for the number of consonants</string>
     <string name="label_vowels">The number of vowels:</string>
-    <string name="enter_edittext">ENTER</string>
+    <string name="enter_button">ENTER</string>
+    <string name="warning_text">Type words here (separate by a space, no punctuation marks):</string>
 </resources>

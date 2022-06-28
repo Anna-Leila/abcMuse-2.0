@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.annaleila.abcMuse">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
+        android:theme="@style/Theme.AppCompat.Light"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,14 +13,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AbcMuse"
         tools:targetApi="31">
+
         <activity
             android:name="com.annaleila.abcMuse.PlayingFieldActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.annaleila.abcMuse.MainActivity" />
+        </activity>
+
         <activity
             android:name="com.annaleila.abcMuse.RulesActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.annaleila.abcMuse.MainActivity" />
+        </activity>
+
         <activity
             android:name="com.annaleila.abcMuse.MainActivity"
             android:exported="true">

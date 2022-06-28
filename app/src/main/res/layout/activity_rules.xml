@@ -8,15 +8,19 @@
     tools:context=".RulesActivity">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="359dp"
-        android:layout_height="305dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/rules_text"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:id="@+id/rules_textView"
+        android:layout_width="384dp"
+        android:layout_height="710dp"
+        android:layout_marginTop="10dp"
+        android:autoLink="web|email"
+        android:textColorLink="@color/blue"
+        android:textColor="#069106"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
