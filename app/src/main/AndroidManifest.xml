@@ -17,7 +17,8 @@
 
         <activity
             android:name="com.annaleila.abcMuse.PlayingFieldActivity"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="portrait" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -26,7 +27,8 @@
 
         <activity
             android:name="com.annaleila.abcMuse.RulesActivity"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="portrait" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -35,7 +37,8 @@
 
         <activity
             android:name="com.annaleila.abcMuse.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

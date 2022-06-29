@@ -1,5 +1,6 @@
 package com.annaleila.abcMuse;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
@@ -7,10 +8,12 @@ import androidx.core.app.NavUtils;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -80,7 +83,7 @@ public class PlayingFieldActivity extends AppCompatActivity {
         setContentView(R.layout.activity_playing_field);
 
         // set back button enabled on tool bar
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
 
@@ -99,6 +102,10 @@ public class PlayingFieldActivity extends AppCompatActivity {
             alphabet[letter - 'a']+=1;
         }
 
+        DisplayMetrics metrics = getResources().getDisplayMetrics(); // screen parameters
+        int width = (int) (metrics.widthPixels * 0.13); // width of a button
+        int height = (int) (metrics.heightPixels * 0.08); // height of a button
+
         // set table layout for consonants: 3 row, 7 consonants in each
         TableLayout consonantsLayout = findViewById(R.id.consonants_table_layout);
         for (int i=0; i<3; i++) {
@@ -106,14 +113,14 @@ public class PlayingFieldActivity extends AppCompatActivity {
             for (int j=0; j<7; j++) {
                 // create consonant button and set it's parameters
                 Button letterButton = new Button(this);
-                letterButton.setTextSize(22);
+                letterButton.setTextSize(20);
                 Character c = consonants.get(i*7 + j);
                 String text = c.toString() + ": " + alphabet[c - 'a'];
                 letterButton.setText(text);
                 if (alphabet[c - 'a']>0) letterButton.setBackgroundColor(markedButton);
                 else letterButton.setBackgroundColor(unmarkedButton);
 
-                letterButton.setLayoutParams(new TableRow.LayoutParams(147, 150));
+                letterButton.setLayoutParams(new TableRow.LayoutParams(width, height));
 
                 letterButtons[c - 'a'] = letterButton;
                 row.addView(letterButton, j);
@@ -128,14 +135,14 @@ public class PlayingFieldActivity extends AppCompatActivity {
             for (int j=0; j<5; j++) {
                 // create vowel button and set it's parameters
                 Button letterButton = new Button(this);
-                letterButton.setTextSize(22);
+                letterButton.setTextSize(20);
                 Character c = vowels.get(i*7 + j);
                 String text = c.toString() + ": " + alphabet[c - 'a'];
                 letterButton.setText(text);
                 if (alphabet[c - 'a']>0) letterButton.setBackgroundColor(markedButton);
                 else letterButton.setBackgroundColor(unmarkedButton);
 
-                letterButton.setLayoutParams(new TableRow.LayoutParams(150, 150));
+                letterButton.setLayoutParams(new TableRow.LayoutParams(width, height));
 
                 letterButtons[c - 'a'] = letterButton;
                 row.addView(letterButton, j);
@@ -147,6 +154,18 @@ public class PlayingFieldActivity extends AppCompatActivity {
         setOutput();
 
         getWords();
+    }
+
+    // this event will enable the back
+    // function to the button on press
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

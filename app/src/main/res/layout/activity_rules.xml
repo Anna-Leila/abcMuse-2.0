@@ -9,18 +9,31 @@
 
     <TextView
         android:id="@+id/rules_textView"
-        android:layout_width="384dp"
-        android:layout_height="710dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:autoLink="web|email"
-        android:textColorLink="@color/blue"
         android:textColor="#069106"
+        android:textColorLink="@color/blue"
         android:textIsSelectable="true"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:paddingTop="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        tools:ignore="SpeakableTextPresentCheck"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
